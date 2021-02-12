@@ -1,0 +1,14 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: guestbook-ui
+  namespace: default
+spec:
+  rules:
+  - host: guestbook.demo
+    http:
+      paths:
+      - backend:
+          serviceName: guestbook-ui
+          servicePort: 80
+        path: /
